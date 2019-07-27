@@ -1,0 +1,11 @@
+{
+  "name": "resto_del_curso_nodejs",
+  "version": "1.0.0",
+  "description": "Paquetes generales para todas las aplicaciones",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jhonatan Amórtegui",
+  "license": "ISC"
+}
