@@ -14,10 +14,22 @@ switch( comando ){
 		console.log('Tarea: ', tarea);
 	break;
 	case 'listar':
-		console.log('Listar: por hacer');
+		porHacer.listar()
+		.then((data)=>{
+			console.log('Lista de datos: ', data);
+		})
+		.catch((err)=>{
+			console.log('Ocurrió un error: ', err)
+		});
 	break;
 	case 'actualizar':
-		console.log('Actualizar: por hacer');
+		porHacer.actualizar(argv.titulo, argv.descripcion, argv.completado)
+		.then((actualicedData) => {
+			console.log('task actualizada: ', actualicedData);
+		})
+		.catch((err) => {
+			console.log('Ha ocurrido un error: ', err);
+		});
 	break;
 	default:
 		console.log('Comando no reconocido');

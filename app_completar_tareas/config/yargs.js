@@ -1,30 +1,32 @@
+const titulo = {
+	demand:true,
+	desc: 'Titulo de la tarea'
+}
+
+const completado = {
+	alias:'c',
+	default:false,
+	desc: 'Marca como completada o pendiente la tarea'
+}
 const argv = require('yargs')
 	.command('crear', 'crea una nueva tarea con su descripción',{
-		titulo:{
-			demand:true
-		},
+		titulo,
 		descripcion:{
 			demand:true,
 			alias: 'd',
 			desc:'descripcion de la tarea por hacer'
 		},
-		completado:{
-			alias:'c',
-			default:false
-		}
+		completado
 	})
 	.command('actualizar', 'Actualiza una tarea ya existente',{
-		titulo:{
-			demand:true
-		},
+		titulo,
 		descripcion:{
 			alias:'d'
 		},
-		completado:{
-			default:false,
-			alias:'c',
-			desc:'Marca como completado o pendiente la tarea'
-		}
+		completado
+	})
+	.command('listar', 'Lista todos los datos que están guardados', {
+
 	})
 	.help()
 	.argv;
